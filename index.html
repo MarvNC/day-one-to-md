@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day One to Markdown</title>
+    <meta
+      name="description"
+      content="Convert Day One Journal.json or zip export into one chronological markdown file."
+    />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Local-Only Tool</p>
+        <h1>Day One to Markdown</h1>
+        <p class="subtitle">
+          Drop a Day One <code>.zip</code> or <code>Journal.json</code>. We parse entries,
+          sort chronologically, and generate one exportable markdown file.
+        </p>
+      </section>
+
+      <section class="panel">
+        <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-label="Upload file">
+          <input id="file-input" type="file" accept=".zip,.json,application/json,application/zip" hidden />
+          <div class="drop-content">
+            <p class="drop-title">Drag and drop your file here</p>
+            <p class="drop-hint">or click to choose <code>.zip</code> / <code>Journal.json</code></p>
+            <p id="status-text" class="status-text">Ready</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="copy-btn" class="btn" disabled>Copy Markdown</button>
+          <button id="download-btn" class="btn btn-primary" disabled>Download .md</button>
+        </div>
+
+        <div id="meta" class="meta" aria-live="polite"></div>
+      </section>
+
+      <section class="panel">
+        <div class="preview-head">
+          <h2>Output Preview</h2>
+        </div>
+        <textarea id="preview" class="preview" readonly placeholder="Generated markdown appears here..."></textarea>
+      </section>
+    </main>
+  </body>
+</html>

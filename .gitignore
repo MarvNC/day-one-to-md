@@ -1,0 +1,11 @@
+node_modules/
+dist/
+
+# Local/exported journal data
+Journal.json
+*.zip
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
